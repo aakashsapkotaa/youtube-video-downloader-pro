@@ -93,6 +93,8 @@ app.get('/api/info', async (req, res) => {
             '--dump-json',
             '--no-warnings',
             '--no-playlist',
+            '--user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            '--extractor-args', 'youtube:player_client=android',
             url
         ]);
 
@@ -210,6 +212,8 @@ app.get('/api/download', async (req, res) => {
         const titleProcess = spawn(YTDLP_PATH, [
             '--get-title',
             '--no-warnings',
+            '--user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            '--extractor-args', 'youtube:player_client=android',
             url
         ]);
 
@@ -246,6 +250,8 @@ app.get('/api/download', async (req, res) => {
                 '--no-check-certificate',
                 '--prefer-ffmpeg',
                 '--merge-output-format', 'mp4',
+                '--user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                '--extractor-args', 'youtube:player_client=android',
                 '-o', '-',  // Output to stdout
                 url
             ]);
@@ -345,6 +351,8 @@ app.get('/api/audio', async (req, res) => {
         const titleProcess = spawn(YTDLP_PATH, [
             '--get-title',
             '--no-warnings',
+            '--user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            '--extractor-args', 'youtube:player_client=android',
             url
         ]);
 
@@ -381,6 +389,8 @@ app.get('/api/audio', async (req, res) => {
                 '-x',
                 '--audio-format', 'mp3',
                 '--audio-quality', '192K',
+                '--user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                '--extractor-args', 'youtube:player_client=android',
                 '-o', '-',
                 url
             ]);
