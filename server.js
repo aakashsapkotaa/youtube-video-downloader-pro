@@ -94,7 +94,9 @@ app.get('/api/info', async (req, res) => {
             '--no-warnings',
             '--no-playlist',
             '--user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-            '--extractor-args', 'youtube:player_client=android',
+            '--extractor-args', 'youtube:player_client=ios,web',
+            '--extractor-args', 'youtube:player_skip=webpage,configs',
+            '--no-check-certificate',
             url
         ]);
 
@@ -213,7 +215,9 @@ app.get('/api/download', async (req, res) => {
             '--get-title',
             '--no-warnings',
             '--user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-            '--extractor-args', 'youtube:player_client=android',
+            '--extractor-args', 'youtube:player_client=ios,web',
+            '--extractor-args', 'youtube:player_skip=webpage,configs',
+            '--no-check-certificate',
             url
         ]);
 
@@ -251,7 +255,8 @@ app.get('/api/download', async (req, res) => {
                 '--prefer-ffmpeg',
                 '--merge-output-format', 'mp4',
                 '--user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                '--extractor-args', 'youtube:player_client=android',
+                '--extractor-args', 'youtube:player_client=ios,web',
+                '--extractor-args', 'youtube:player_skip=webpage,configs',
                 '-o', '-',  // Output to stdout
                 url
             ]);
@@ -352,7 +357,9 @@ app.get('/api/audio', async (req, res) => {
             '--get-title',
             '--no-warnings',
             '--user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-            '--extractor-args', 'youtube:player_client=android',
+            '--extractor-args', 'youtube:player_client=ios,web',
+            '--extractor-args', 'youtube:player_skip=webpage,configs',
+            '--no-check-certificate',
             url
         ]);
 
@@ -390,7 +397,9 @@ app.get('/api/audio', async (req, res) => {
                 '--audio-format', 'mp3',
                 '--audio-quality', '192K',
                 '--user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                '--extractor-args', 'youtube:player_client=android',
+                '--extractor-args', 'youtube:player_client=ios,web',
+                '--extractor-args', 'youtube:player_skip=webpage,configs',
+                '--no-check-certificate',
                 '-o', '-',
                 url
             ]);
