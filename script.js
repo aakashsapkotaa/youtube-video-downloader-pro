@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // Fetch video info from backend API
-            const response = await fetch(`http://localhost:3000/api/info?url=${encodeURIComponent(url)}`);
+            const response = await fetch(`/api/info?url=${encodeURIComponent(url)}`);
 
             if (!response.ok) {
                 throw new Error('Failed to fetch video info');
@@ -133,12 +133,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (format === 'mp3') {
             // Use audio endpoint for MP3
-            downloadUrl = `http://localhost:3000/api/audio?url=${encodeURIComponent(url)}`;
+            downloadUrl = `/api/audio?url=${encodeURIComponent(url)}`;
         } else {
             // Use download endpoint with quality parameter
             // Map quality like "1080p" to just "1080"
             const qualityNumber = quality.replace('p', '');
-            downloadUrl = `http://localhost:3000/api/download?url=${encodeURIComponent(url)}&quality=${qualityNumber}`;
+            downloadUrl = `/api/download?url=${encodeURIComponent(url)}&quality=${qualityNumber}`;
         }
 
         console.log('Initiating download:', downloadUrl);
