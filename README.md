@@ -19,7 +19,7 @@ A lightning-fast, production-ready YouTube video downloader with a beautiful UI.
 
 ## 🖼️ Screenshots
 
-![YouTube Downloader Interface](screenshot.png)
+![YouTube Downloader Interface](Screenshot.png)
 
 ## 🚀 Quick Start
 
