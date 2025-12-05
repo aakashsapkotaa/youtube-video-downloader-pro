@@ -3,7 +3,7 @@ services:
     name: youtube-downloader-api
     env: node
     plan: free
-    buildCommand: npm install
+    buildCommand: npm install && chmod +x bin/yt-dlp
     startCommand: npm start
     envVars:
       - key: NODE_ENV

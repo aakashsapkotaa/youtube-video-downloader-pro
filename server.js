@@ -8,8 +8,12 @@
 
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const { spawn } = require('child_process');
 const app = express();
+
+// Path to bundled yt-dlp binary
+const YTDLP_PATH = path.join(__dirname, 'bin', 'yt-dlp');
 
 // Middleware
 app.use(cors());
@@ -85,7 +89,7 @@ app.get('/api/info', async (req, res) => {
         console.log(`[INFO] Fetching info for: ${url}`);
 
         // Run yt-dlp to get video info with format details
-        const ytdlp = spawn('yt-dlp', [
+        const ytdlp = spawn(YTDLP_PATH, [
             '--dump-json',
             '--no-warnings',
             '--no-playlist',
@@ -203,7 +207,7 @@ app.get('/api/download', async (req, res) => {
         const formatString = `bv*[height<=${height}]+ba/best[height<=${height}]/best`;
 
         // Get video title for filename using yt-dlp
-        const titleProcess = spawn('yt-dlp', [
+        const titleProcess = spawn(YTDLP_PATH, [
             '--get-title',
             '--no-warnings',
             url
@@ -234,7 +238,7 @@ app.get('/api/download', async (req, res) => {
             res.setHeader('Access-Control-Expose-Headers', 'X-Credits');
 
             // Spawn yt-dlp process
-            const ytdlp = spawn('yt-dlp', [
+            const ytdlp = spawn(YTDLP_PATH, [
                 '-f', formatString,
                 '--no-playlist',
                 '--no-warnings',
@@ -338,7 +342,7 @@ app.get('/api/audio', async (req, res) => {
         console.log(`[AUDIO] URL: ${url}`);
 
         // Get video title for filename
-        const titleProcess = spawn('yt-dlp', [
+        const titleProcess = spawn(YTDLP_PATH, [
             '--get-title',
             '--no-warnings',
             url
@@ -369,7 +373,7 @@ app.get('/api/audio', async (req, res) => {
             res.setHeader('Access-Control-Expose-Headers', 'X-Credits');
 
             // Spawn yt-dlp for audio extraction
-            const ytdlp = spawn('yt-dlp', [
+            const ytdlp = spawn(YTDLP_PATH, [
                 '-f', 'bestaudio/best',
                 '--no-playlist',
                 '--no-warnings',
