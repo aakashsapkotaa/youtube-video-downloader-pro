@@ -33,8 +33,8 @@ A lightning-fast, production-ready YouTube video downloader with a beautiful UI.
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/youtube-downloader.git
-   cd youtube-downloader
+   git clone https://github.com/aakashsapkotaa/youtube-video-downloader-pro.git
+   cd youtube-video-downloader-pro
    ```
 
 2. **Install dependencies**
@@ -208,8 +208,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 **Aakash Sapkota**
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
+- GitHub: [@aakashsapkotaa](https://github.com/aakashsapkotaa)
+- Email: aakashsapkotaa@example.com
 
 ## 🙏 Acknowledgments
 
