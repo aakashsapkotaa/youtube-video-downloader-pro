@@ -1,5 +1,5 @@
-# Use Node.js 18 with Python3 pre-installed
-FROM node:18-bullseye
+# Use Node.js 18 with Python3.11 pre-installed (bookworm has Python 3.11)
+FROM node:18-bookworm
 
 # Install Python3 and ffmpeg
 RUN apt-get update && apt-get install -y \
