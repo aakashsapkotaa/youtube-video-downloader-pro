@@ -1,0 +1,10 @@
+providers = ["node", "python"]
+
+[phases.setup]
+nixPkgs = ["python3", "ffmpeg"]
+
+[phases.install]
+cmds = ["npm install", "chmod +x bin/yt-dlp"]
+
+[start]
+cmd = "npm start"
