@@ -149,28 +149,33 @@ PORT=8080 npm start
 
 ## 🌐 Deployment
 
-### Deploy to Render.com
+🚀 Deploy to Railway.app
 
-1. Create a new Web Service on [Render](https://render.com)
-2. Connect your GitHub repository
-3. Set build command: `npm install`
-4. Set start command: `npm start`
-5. Add environment variable: `NODE_VERSION=18`
-6. Deploy!
+Go to https://railway.app/
 
-### Deploy to Heroku
+Click New Project → Deploy from GitHub Repo
 
-```bash
-heroku create your-app-name
-git push heroku main
-```
+Select your repository
 
-### Deploy to Railway
+Railway will auto-detect your project
+If not:
 
-1. Connect your GitHub repository to [Railway](https://railway.app)
-2. Railway will auto-detect Node.js and deploy
-3. Done!
+Build Command: npm install
 
+Start Command: npm start
+
+Add Environment Variables (if required)
+
+Set Node Version = 18
+
+Go to Project → Settings → Nixpacks → Add Variable
+
+NODE_VERSION=18
+
+
+Click Deploy
+
+Railway will build and host your app automatically
 ## 🛠️ Technologies Used
 
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
